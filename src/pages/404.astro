@@ -1,7 +1,8 @@
 ---
 import DefaultLayout from "../layouts/default.astro";
+import Handle404 from "../components/util/Handle404.astro";
 ---
 
 <DefaultLayout>
-  <h1>404</h1>
+  <Handle404 page={Astro.url.pathname} />
 </DefaultLayout>
