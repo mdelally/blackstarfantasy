@@ -1,0 +1,19 @@
+---
+import "../assets/main.css";
+const currentYear = new Date().getFullYear();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <title>black.star.fantasy</title>
+  </head>
+
+  <body>
+    <section class="h-full flex justify-center items-center">
+      <slot />
+    </section>
+  </body>
+</html>
