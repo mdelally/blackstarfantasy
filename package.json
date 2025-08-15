@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/flattenNotFound.js",
+    "build:push": "npm run build && neocities push ./dist",
     "preview": "astro preview",
     "astro": "astro"
   },
