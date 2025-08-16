@@ -31,7 +31,6 @@ const lastFmData = ref(null);
 const interval = ref(null);
 
 onMounted(async () => {
-  console.log("LastFm widget mounted");
   await getLastFmData();
 
   interval.value = setInterval(async () => {
@@ -47,8 +46,8 @@ async function getLastFmData() {
   const response = await fetch(
     "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=mdelally&api_key=2b9c986412c239b35ca13a48b569a26f&format=json&extended=1",
   );
+
   const data = await response.json();
-  console.log(data.recenttracks.track[0]);
   lastFmData.value = data;
 }
 
