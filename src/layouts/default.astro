@@ -13,12 +13,24 @@ const navItems = [
     href: "/about/",
   },
   {
-    name: "PROJECTS",
-    href: "/projects/",
+    name: "CODE",
+    href: "/code/",
+  },
+  {
+    name: "GAMES",
+    href: "/games/",
+  },
+  {
+    name: "MUSIC",
+    href: "/music/",
   },
   {
     name: "BLOG",
     href: "/blog/",
+  },
+  {
+    name: "REVIEWS",
+    href: "/reviews/",
   },
 ];
 ---
@@ -43,14 +55,16 @@ const navItems = [
             <nav
               class="bg-black py-1 px-2 flex gap-2 justify-between items-center rounded-t-lg"
             >
-              <div class="flex items-center">
+              <div class="flex items-center flex-grow justify-between">
                 <LastFm client:only="vue" />
                 <button
-                  class="px-2 py-1 cursor-pointer"
+                  class="px-2 py-1 cursor-pointer text-sm hover:bg-orange-500/50 rounded-md transition-all duration-300 ease-in-out"
                   type="button"
                   onclick="document.body.classList.toggle('has-motion');"
-                  >STOP MOTION</button
+                  title="Toggle animated elements on/off"
                 >
+                  TOGGLE MOTION
+                </button>
               </div>
               <div>
                 {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
@@ -85,12 +99,13 @@ const navItems = [
 
           <!-- MAIN CONTENT -->
           <main class="flex">
+            <!-- LEFT SIDEBAR -->
             <aside class="w-1/4 pt-6 pl-6">
               <nav
-                class="flex flex-col gap-1 sticky top-6 bg-black/50 p-4 rounded-lg border-2 border-white/30 shadow-lg shadow-black/15"
+                class="flex flex-col gap-1 sticky top-6 bg-black/50 p-4 rounded-lg border-2 border-white/20 shadow-lg shadow-black/15"
               >
                 <h2
-                  class="text-xl font-light mb-2 text-white/20 border-b-2 border-white/20 uppercase tracking-widest"
+                  class="text-xl font-light mb-2 text-white/20 border-b-2 border-dotted border-white/20 uppercase tracking-widest"
                 >
                   MENU
                 </h2>

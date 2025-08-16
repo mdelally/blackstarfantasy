@@ -19,6 +19,9 @@ body {
   background-image: url("../assets/img/clouds.jpg");
   background-attachment: fixed;
   background-blend-mode: color-dodge;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body.has-motion {
@@ -30,14 +33,35 @@ body.has-motion {
     background-position: 0 0; /* Starting position */
   }
   100% {
-    background-position: 1024px -256px; /* Ending position (moves one full image width to the left) */
+    background-position: 1024px -512px; /* Ending position (moves one full image width to the left) */
   }
 }
 
+*:focus {
+  outline: 2px dotted var(--color-orange-500);
+  @apply animate-pulse;
+}
+
 a:not(.no-underline) {
-  @apply text-sm text-stone-400 hover:text-orange-500 transition-all duration-300 ease-in-out underline hover:bg-black/50 p-1 hover:no-underline;
+  @apply text-sm text-stone-400 hover:text-orange-500 transition-all duration-300 ease-in-out underline hover:bg-black/50 p-1 hover:no-underline hover:text-shadow-md hover:text-shadow-orange-500/50;
 }
 
 p {
   @apply tracking-wide;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-500);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-orange-500);
 }
