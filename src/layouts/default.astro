@@ -1,6 +1,25 @@
 ---
 import "../assets/main.css";
 const currentYear = new Date().getFullYear();
+
+const navItems = [
+  {
+    name: "HOME",
+    href: "/home/",
+  },
+  {
+    name: "ABOUT",
+    href: "/about/",
+  },
+  {
+    name: "PROJECTS",
+    href: "/projects/",
+  },
+  {
+    name: "BLOG",
+    href: "/blog/",
+  },
+];
 ---
 
 <html lang="en">
@@ -12,54 +31,82 @@ const currentYear = new Date().getFullYear();
   </head>
 
   <body>
-    <section class="h-full flex justify-center items-center">
-      <div class="h-full flex flex-col w-[1440px]">
-        <!-- BANNER AND TOP NAVs -->
-        <header>
-          <!-- TOP NAV -->
-          <nav class="py-1 flex justify-end items-center">
-            <a href="/home/">HOME</a>
-          </nav>
-          <!-- BANNER -->
-          <a
-            href="/home/"
-            id="banner"
-            class="group w-full flex flex-col justify-end items-center transition-all duration-300 ease-in-out no-underline"
-          >
-            <h1
-              class="bg-black/55 backdrop-blur-sm w-full py-6 text-4xl text-orange-500 tracking-widest flex items-center justify-center text-shadow-lg text-shadow-black/55 group-hover:bg-black/75 transition-all duration-300 ease-in-out"
+    <section class="flex justify-center">
+      <div
+        class="flex flex-col justify-between w-[1440px] bg-black/40 border-l-2 border-r-2 border-t-2 my-6 mx-6 border-white/30 rounded-lg"
+      >
+        <section>
+          <!-- BANNER AND TOP NAVs -->
+          <header>
+            <!-- TOP NAV -->
+            <nav
+              class="bg-black py-1 px-2 flex gap-2 justify-between items-center rounded-t-lg"
             >
-              <span
-                class="group-hover:scale-115 transition-all duration-300 ease-in-out"
+              <div class="items-center">uhhhh</div>
+              <div>
+                {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
+              </div>
+            </nav>
+            <!-- BANNER -->
+            <a
+              href="/home/"
+              id="banner"
+              class="group w-full flex flex-col justify-end items-center transition-all duration-300 ease-in-out no-underline border-t-2 border-b-2 border-white/30"
+            >
+              <h1
+                class="bg-black/55 backdrop-blur-sm w-full py-6 text-4xl text-orange-500 tracking-widest flex items-center justify-center text-shadow-lg text-shadow-black/55 group-hover:bg-black/75 transition-all duration-300 ease-in-out"
               >
-                <span class="text-white animate-pulse">//&nbsp;</span>black<span
-                  class="text-white">.</span
-                >star<span class="text-white">.</span>fantasy
-              </span>
-            </h1>
-          </a>
-          <!-- BOTTOM NAV -->
-          <nav>BOTTOM NAV</nav>
-        </header>
-        <!-- MAIN CONTENT -->
-        <main>
-          <slot />
-        </main>
+                <span
+                  class="group-hover:scale-115 transition-all duration-300 ease-in-out"
+                >
+                  <span class="text-white animate-pulse">//&nbsp;</span
+                  >black<span class="text-white">.</span>star<span
+                    class="text-white">.</span
+                  >fantasy
+                </span>
+              </h1>
+            </a>
+            <!-- BOTTOM NAV -->
+            <nav
+              class="bg-black/40 backdrop-blur-sm py-4 px-2 flex gap-2 justify-center items-center border-b-2 border-white/30"
+            >
+              {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
+            </nav>
+          </header>
+
+          <!-- MAIN CONTENT -->
+          <main class="flex">
+            <aside class="w-1/4 pt-6 pl-6">
+              <nav
+                class="flex flex-col gap-2 sticky top-6 bg-black/50 p-4 rounded-lg border-2 border-white/30"
+              >
+                {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
+              </nav>
+            </aside>
+
+            <section class="w-full py-6 px-16">
+              <slot />
+            </section>
+          </main>
+        </section>
+
         <!-- FOOTER -->
         <footer
-          class="flex flex-col items-center gap-6 py-14 text-sm text-stone-400 text-center"
+          id="footer"
+          class="border-t-2 border-b-2 border-white/30 flex flex-col items-center gap-3 py-8 text-sm text-stone-400 rounded-b-lg"
         >
-          <p>
+          <p class="text-white bg-black/50 backdrop-blur-sm p-2">
             &copy; {currentYear} black.star.fantasy. Some rights reserved.
           </p>
-          <p>
+          <p class="text-white bg-black/50 backdrop-blur-sm p-2">
             Made with ❤️ by
             <a
               href="https://github.com/mdelally"
               target="_blank"
-              class="text-orange-500">Michael DeLally</a
+              class="text-orange-500"
             >
-            using Astro and TailwindCSS.
+              Michael DeLally
+            </a> using Astro and TailwindCSS.
           </p>
         </footer>
       </div>
@@ -74,5 +121,12 @@ const currentYear = new Date().getFullYear();
     background-position: center;
     background-repeat: no-repeat;
     height: 280px;
+  }
+
+  #footer {
+    background-image: url("../assets/img/footer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 </style>

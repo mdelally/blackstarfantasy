@@ -6,15 +6,15 @@
 }
 
 html,
-body,
-#app {
+body {
   font-family: var(--font-space-grotesk);
-  background-color: #111;
+  background-color: var(--color-neutral-800);
   color: #fff;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+  /* overflow: hidden; */
 }
 
 a:not(.no-underline) {
