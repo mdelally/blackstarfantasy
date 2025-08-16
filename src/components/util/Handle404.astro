@@ -1,5 +1,7 @@
 ---
 const { page } = Astro.props;
+
+const hasTrailingSlash = page.endsWith("/");
 ---
 
 <section class="w-full flex flex-col items-center justify-center p-16">
@@ -9,9 +11,20 @@ const { page } = Astro.props;
   </span>
 
   <p class="text-sm text-stone-400 mb-8">
-    The page you are looking for does not exist - OR - you are missing a
-    trailing slash!
+    {
+      hasTrailingSlash
+        ? "The page you are looking for does not exist."
+        : "The page you are looking for does not exist - OR - you are missing a trailing slash!"
+    }
   </p>
+
+  {
+    !hasTrailingSlash && (
+      <a href={page + "/"} class="text-orange-500">
+        -- try {page + "/"} --
+      </a>
+    )
+  }
 
   <a href="/home/" class="text-orange-500">-- go home --</a>
 </section>
