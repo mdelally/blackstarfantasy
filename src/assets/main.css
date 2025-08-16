@@ -5,16 +5,33 @@
   --font-space-grotesk: "Space Grotesk", sans-serif;
 }
 
-html,
+html {
+  height: 100%;
+}
+
 body {
   font-family: var(--font-space-grotesk);
-  background-color: var(--color-neutral-800);
+  background-color: var(--color-neutral-900);
   color: var(--color-neutral-200);
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
+  background-image: url("../assets/img/clouds.jpg");
+  background-attachment: fixed;
+  background-blend-mode: color-dodge;
+}
+
+body.has-motion {
+  animation: scrollBackground 20s linear infinite; /* 20s duration, linear timing, infinite loop */
+}
+
+@keyframes scrollBackground {
+  0% {
+    background-position: 0 0; /* Starting position */
+  }
+  100% {
+    background-position: 1024px -256px; /* Ending position (moves one full image width to the left) */
+  }
 }
 
 a:not(.no-underline) {

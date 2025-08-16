@@ -31,10 +31,10 @@ const navItems = [
     <title>black.star.fantasy</title>
   </head>
 
-  <body>
+  <body class="has-motion">
     <section class="flex justify-center">
       <div
-        class="flex flex-col justify-between w-[1440px] bg-black/40 border-l-2 border-r-2 border-t-2 my-6 mx-6 border-white/30 rounded-lg shadow-xl shadow-black/35"
+        class="flex flex-col justify-between w-[1440px] bg-black/40 backdrop-blur-md border-l-2 border-r-2 border-t-2 my-6 mx-6 border-white/30 rounded-lg shadow-xl shadow-black/35"
       >
         <section>
           <!-- BANNER AND TOP NAVs -->
@@ -43,8 +43,14 @@ const navItems = [
             <nav
               class="bg-black py-1 px-2 flex gap-2 justify-between items-center rounded-t-lg"
             >
-              <div class="items-center">
+              <div class="flex items-center">
                 <LastFm client:only="vue" />
+                <button
+                  class="px-2 py-1 cursor-pointer"
+                  type="button"
+                  onclick="document.body.classList.toggle('has-motion');"
+                  >STOP MOTION</button
+                >
               </div>
               <div>
                 {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
