@@ -28,6 +28,10 @@ body.has-motion {
   animation: scrollBackground 20s linear infinite; /* 20s duration, linear timing, infinite loop */
 }
 
+body.splash {
+  background-image: none;
+}
+
 @keyframes scrollBackground {
   0% {
     background-position: 0 0; /* Starting position */
