@@ -1,6 +1,7 @@
 ---
 import "../assets/main.css";
 const currentYear = new Date().getFullYear();
+import LastFm from "../components/widgets/LastFm.vue";
 
 const navItems = [
   {
@@ -33,7 +34,7 @@ const navItems = [
   <body>
     <section class="flex justify-center">
       <div
-        class="flex flex-col justify-between w-[1440px] bg-black/40 border-l-2 border-r-2 border-t-2 my-6 mx-6 border-white/30 rounded-lg"
+        class="flex flex-col justify-between w-[1440px] bg-black/40 border-l-2 border-r-2 border-t-2 my-6 mx-6 border-white/30 rounded-lg shadow-xl shadow-black/35"
       >
         <section>
           <!-- BANNER AND TOP NAVs -->
@@ -42,7 +43,9 @@ const navItems = [
             <nav
               class="bg-black py-1 px-2 flex gap-2 justify-between items-center rounded-t-lg"
             >
-              <div class="items-center">uhhhh</div>
+              <div class="items-center">
+                <LastFm client:only="vue" />
+              </div>
               <div>
                 {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
               </div>
@@ -78,8 +81,13 @@ const navItems = [
           <main class="flex">
             <aside class="w-1/4 pt-6 pl-6">
               <nav
-                class="flex flex-col gap-2 sticky top-6 bg-black/50 p-4 rounded-lg border-2 border-white/30"
+                class="flex flex-col gap-1 sticky top-6 bg-black/50 p-4 rounded-lg border-2 border-white/30 shadow-lg shadow-black/15"
               >
+                <h2
+                  class="text-xl font-light mb-2 text-white/20 border-b-2 border-white/20 uppercase tracking-widest"
+                >
+                  MENU
+                </h2>
                 {navItems.map((item) => <a href={item.href}>{item.name}</a>)}
               </nav>
             </aside>

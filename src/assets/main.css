@@ -9,7 +9,7 @@ html,
 body {
   font-family: var(--font-space-grotesk);
   background-color: var(--color-neutral-800);
-  color: #fff;
+  color: var(--color-neutral-200);
   height: 100%;
   width: 100%;
   margin: 0;
