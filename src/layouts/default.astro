@@ -3,6 +3,8 @@ import "../assets/main.css";
 const currentYear = new Date().getFullYear();
 import LastFm from "../components/widgets/LastFm.vue";
 
+const { title } = Astro.props;
+
 const navItems = [
   {
     name: "HOME",
@@ -40,7 +42,7 @@ const navItems = [
     <meta charset="utf-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
-    <title>black.star.fantasy</title>
+    <title>{title} | black.star.fantasy</title>
   </head>
 
   <body class="has-motion">
@@ -100,7 +102,7 @@ const navItems = [
           <!-- MAIN CONTENT -->
           <main class="flex">
             <!-- LEFT SIDEBAR -->
-            <aside class="w-1/4 pt-6 pl-6">
+            <aside class="w-1/4 pt-6 pl-6 mb-6">
               <nav
                 class="flex flex-col gap-1 sticky top-6 bg-black/50 p-4 rounded-lg border-2 border-white/20 shadow-lg shadow-black/15"
               >
@@ -125,7 +127,8 @@ const navItems = [
           class="border-t-2 border-b-2 border-white/30 flex flex-col items-center gap-3 py-8 text-sm text-stone-400 rounded-b-lg"
         >
           <p class="text-white bg-black/50 backdrop-blur-sm p-2">
-            &copy; {currentYear} black.star.fantasy. Some rights reserved.
+            Black Star Fantasy and original content &copy; {currentYear} Michael
+            DeLally. All other content &copy; their respective owners.
           </p>
           <p class="text-white bg-black/50 backdrop-blur-sm p-2">
             Made with ❤️ by

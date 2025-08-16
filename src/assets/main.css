@@ -47,7 +47,7 @@ body.splash {
 }
 
 a:not(.no-underline) {
-  @apply text-sm text-stone-400 hover:text-orange-500 transition-all duration-300 ease-in-out underline hover:bg-black/50 p-1 hover:no-underline hover:text-shadow-md hover:text-shadow-orange-500/50;
+  @apply text-stone-400 hover:text-orange-500 transition-all duration-300 ease-in-out underline hover:bg-black/50 p-1 hover:no-underline hover:text-shadow-md hover:text-shadow-orange-500/50;
 }
 
 p {
