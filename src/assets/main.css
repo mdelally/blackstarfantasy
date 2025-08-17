@@ -24,8 +24,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body.has-motion {
-  animation: scrollBackground 20s linear infinite; /* 20s duration, linear timing, infinite loop */
+@media (prefers-reduced-motion: no-preference) {
+  body.has-motion {
+    animation: scrollBackground 20s linear infinite; /* 20s duration, linear timing, infinite loop */
+  }
 }
 
 body.splash {
@@ -47,7 +49,7 @@ body.splash {
 }
 
 a:not(.no-underline) {
-  @apply text-stone-400 hover:text-orange-500 transition-all duration-300 ease-in-out underline hover:bg-black/50 p-1 hover:no-underline hover:text-shadow-md hover:text-shadow-orange-500/50;
+  @apply text-stone-400 hover:text-amber-500 transition-all duration-300 ease-in-out underline hover:bg-black/50 p-1  hover:text-shadow-md hover:text-shadow-amber-500/50 hover:decoration-dotted hover:decoration-2;
 }
 
 p {
@@ -63,9 +65,14 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neutral-500);
+  background: var(--color-amber-800);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange-500);
+  background: var(--color-amber-500);
+}
+
+.scanlines {
+  background-image: url("../assets/img/scanlines_white.png");
+  background-blend-mode: overlay;
 }

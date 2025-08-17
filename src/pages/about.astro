@@ -1,37 +1,60 @@
 ---
 import DefaultLayout from "../layouts/default.astro";
+import { Image } from "astro:assets";
+import FusedKame from "../assets/img/fusedkame.gif";
+
+const details = [
+  {
+    label: "Name",
+    value: "Michael (he/him/they)",
+  },
+  {
+    label: "Occupation",
+    value: "Software Engineer",
+  },
+  {
+    label: "Age",
+    value: "33",
+  },
+  {
+    label: "Location",
+    value: "Richmond, VA, USA",
+  },
+  {
+    label: "Hometown",
+    value: "Tampa, FL, USA",
+  },
+];
 ---
 
 <DefaultLayout title="About">
   <h1
-    class="text-orange-500 text-shadow-lg text-shadow-orange-700/50 px-2 text-4xl font-bold mb-4 w-full border-b-2 border-dotted py-2 border-white/30"
+    class="text-amber-500 text-shadow-lg text-shadow-amber-700/50 px-2 text-4xl font-bold mb-4 w-full border-b-2 border-dotted py-2 border-white/30"
   >
     About
   </h1>
 
-  <div class="mb-6 bg-orange-500/10 p-4 rounded-lg max-w-md">
+  <section
+    class="scanlines mb-6 bg-amber-500/40 p-6 rounded-lg w-full lg:min-w-md lg:max-w-md float-none lg:float-right lg:ml-6 border-2 border-dotted border-white/30 shadow-lg shadow-amber-500/20 text-shadow-md text-shadow-amber-900/70"
+  >
+    <h2 class="text-xl font-bold mb-4">Quick Deets</h2>
     <ul class="list-style-none flex flex-col gap-2">
-      <li class="flex items-center gap-2 w-full justify-between">
-        <span class="font-bold">Name</span> Michael (he/him/they)
-      </li>
-      <li class="flex items-center gap-2 w-full justify-between">
-        <span class="font-bold">Age</span> 33
-      </li>
-      <li class="flex items-center gap-2 w-full justify-between">
-        <span class="font-bold">Location</span> Richmond, VA, USA
-      </li>
-      <li class="flex items-center gap-2 w-full justify-between">
-        <span class="font-bold">Occupation</span> Software Engineer
-      </li>
+      {
+        details.map((d) => (
+          <li class="flex items-center gap-2 w-full justify-between">
+            <span class="font-bold">{d.label}</span> {d.value}
+          </li>
+        ))
+      }
     </ul>
-  </div>
+  </section>
 
   <p class="text-lg mb-4 leading-loose">
-    Hiya! My name is Michael. I am a multi-disciplinary creative nerd person who
-    got my start in the web in the early 2000s. From small fansites and being an
-    active member of the RPG Maker community, I've grown into a professional
-    programmer who hobbies in game development, music, and art &mdash; oh! and
-    I've started keeping fish! 🐟🐟
+    Hiya! My name is Michael. I'm a multi-disciplinary creative nerd-person who
+    got my start on the web in the early 2000s. With roots in small fansites and
+    being an active member of the RPG Maker community, I've grown into a
+    professional programmer who hobbies in game development, music, and art
+    &mdash; oh! and I've started keeping freshwater fish! 🐟🐟
   </p>
 
   <p class="text-lg mb-4 leading-loose">
@@ -44,5 +67,59 @@ import DefaultLayout from "../layouts/default.astro";
     Professionally, I am a web software engineer, but Black Star Fantasy is my
     personal site to dive into the nostalgia of my early days on the web whilst
     also exploring my creativity with the medium I have grown up with.
+  </p>
+
+  <section class="flex flex-col items-center justify-center my-12">
+    <Image
+      src={FusedKame}
+      alt="Gogeta shooting Kamehameha"
+      width={405}
+      height={94}
+      decoding="async"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </section>
+
+  <h2
+    class="text-2xl font-bold mb-4 mt-12 text-amber-500 text-shadow-lg text-shadow-amber-700/50"
+  >
+    What's in a name? Origins of Black Star Fantasy
+  </h2>
+
+  <p class="text-lg mb-4 leading-loose">
+    When I was getting my start making websites, I frequented an affiliate ring
+    of fansites with the shared moniker of "Black Star", a homage to the black
+    star dragon balls in Dragon Ball GT. Well, I just had to be a part of that -
+    and I was obsessed with Final Fantasy games - so thus, Black Star Fantasy
+    was born. You can even see some remnants of it to this day <a
+      href="https://web.archive.org/web/20040523103945/http://www.bsfantasy.net:80/"
+      target="_blank">on the Wayback Machine</a
+    >.
+  </p>
+  <p class="text-lg mb-4 leading-loose">
+    Unfortunately, most of the layouts and designs were lost to time, but it is
+    quite hilarious to go back and see my 12 year old self on the internet. I
+    have attempted several other little ventures over the years, but nothing
+    quite hits the feels like Black Star Fantasy, so reimagining it here has
+    been a blast!
+  </p>
+
+  <h2
+    class="text-2xl font-bold mb-4 mt-12 text-amber-500 text-shadow-lg text-shadow-amber-700/50"
+  >
+    The Future of Black Star Fantasy
+  </h2>
+
+  <p class="text-lg mb-4 leading-loose">
+    BSF is really just a fun project for me to explore my creativity and
+    nostalgia for the web. I'm not sure where it will go, but I'm excited to see
+    where it takes me.
+  </p>
+  <p class="text-lg mb-4 leading-loose">
+    Largely, it will be a blog and a place to share my non-tech related hobbies.
+    I also think it would be fun to write some tutorials like I did as a
+    youngster. This time around, I'll probably focus on how you can use modern
+    web technologies to make managing even a simple Neocities site even easier.
   </p>
 </DefaultLayout>

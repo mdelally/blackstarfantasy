@@ -1,14 +1,40 @@
 ---
 import DefaultLayout from "../layouts/default.astro";
+import { Image } from "astro:assets";
+
+import UnderConstruction from "../assets/img/under_construction.gif";
 ---
 
 <DefaultLayout title="Home">
   <h1
-    class="text-orange-500 text-shadow-lg text-shadow-orange-700/50 px-2 text-4xl font-bold mb-4 w-full border-b-2 border-dotted py-2 border-white/30"
+    class="text-amber-500 text-shadow-lg text-shadow-amber-600/50 px-2 text-4xl font-bold mb-4 w-full border-b-2 border-dotted py-2 border-white/30 text-center"
   >
-    Welcome!
+    Welcome! Please pardon the dust :3
   </h1>
 
+  <div class="flex justify-center items-center p-8">
+    <Image
+      src={UnderConstruction}
+      alt="Under construction"
+      width={230}
+      height={40}
+      loading="eager"
+    />
+    <Image
+      src={UnderConstruction}
+      alt="Under construction"
+      width={230}
+      height={40}
+      loading="eager"
+    />
+    <Image
+      src={UnderConstruction}
+      alt="Under construction"
+      width={230}
+      height={40}
+      loading="eager"
+    />
+  </div>
   <p class="text-lg mb-4">
     <strong>Black Star Fantasy</strong> is a personal site that serves as a homage
     to one of my very first websites, originally authored in 2003. To the best of

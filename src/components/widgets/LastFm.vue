@@ -1,6 +1,6 @@
 <template>
   <div class="flex gap-2 items-center justify-center" v-if="lastFmData">
-    <Icon icon="fa6-brands:lastfm" class="w-5 h-5 text-orange-500" />
+    <Icon icon="fa6-brands:lastfm" class="w-5 h-5 text-amber-500" />
     <span class="text-xs text-stone-400" v-if="currentlyPlaying"
       >NOW PLAYING</span
     >
@@ -10,13 +10,9 @@
       class="flex items-center justify-center"
       :class="{ 'no-animation': !currentlyPlaying }"
     >
-      <marquee
-        width="180"
-        scrollamount="3"
-        class="bg-black/60 text-white text-sm tracking-wider"
-      >
+      <span class="bg-black/60 text-white text-sm tracking-wider">
         {{ trackString }}
-      </marquee>
+      </span>
     </div>
   </div>
   <div v-else>Loading...</div>
@@ -69,10 +65,8 @@ const currentlyPlaying = computed(() => {
 <style scoped>
 #nowPlaying {
   background-image: url("../../assets/img/MusicSoundEqualizer.gif");
-
-  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
 }
 
 #nowPlaying.no-animation {
