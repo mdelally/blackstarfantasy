@@ -76,3 +76,15 @@ p {
   background-image: url("../assets/img/scanlines_white.png");
   background-blend-mode: overlay;
 }
+
+/* Enable cross-document view transitions for same-origin navigations */
+@view-transition {
+  navigation: auto;
+}
+
+/* Optional: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
